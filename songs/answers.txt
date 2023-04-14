@@ -1,0 +1,6 @@
+I would say that this person's audio aura is happy and energetic because the average value for energy and danceability
+was above 0.5 and its danceabaility was especially high with the value of 0.71646.
+However, it might not be a very good way to calculate this person's aura because there might be an outlier that is influencing the average a lot.
+For example, a person can just have a very bad day and listen to a song that has extremley low energy and danceability which would influence
+the average value a lot. Instead, I would suggest using a median value to find out the audio auro because median will not be influenced by
+those outliers.

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            window.addEventListener('DOMContentLoaded', function(event){
+                let answer1 = 'Tokyo';
+                let answer2 = 'Switzerland'
+                let text1 = document.getElementById('text1');
+                let text2 = document.getElementById('text2');
+                let answerBox = document.getElementById('answerBox')
+                const buttons = document.querySelectorAll('.choice');
+                buttons.forEach(button => {
+                    button.addEventListener('mousedown', (event) => {
+                        let trigger = event.srcElement;
+                        if (trigger.innerHTML == answer1)
+                        {
+                            trigger.style.backgroundColor = 'Green';
+                            text1.innerHTML = 'Correct!';
+                        }
+                        else
+                        {
+                            trigger.style.backgroundColor = 'Red';
+                            text1.innerHTML = 'Incorrect';
+                        }
+                    });
+                    button.addEventListener('mouseup', (event) => {
+                        let trigger = event.srcElement;
+                        trigger.style.backgroundColor = '#d9edff';
+                        text1.innerHTML = '';
+
+                    })
+                });
+                document.querySelector('#check').addEventListener('click', (event) => {
+                    if (answerBox.value == answer2)
+                    {
+                        answerBox.style.backgroundColor = 'Green';
+                        text2.innerHTML = 'Correct!';
+                    }
+                    else
+                    {
+                        answerBox.style.backgroundColor = 'Red';
+                        text2.innerHTML = 'Incorrect';
+                    }
+                })
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Where is the capital of Japan?</h3>
+                <button class="choice">Tokyo</Button>
+                <button class="choice">Kyoto</Button>
+                <button class="choice">Nagoya</Button>
+                <p id="text1"></p>
+                <!-- TODO: Add multiple choice question here -->
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>
+                    In which country is it illegla to own only one guine apig, as a lone guinea pig might get lonely?
+                </h3>
+                <input id="answerBox" type="text">
+                <button id="check">Check Answer</button>
+                <p id="text2"></p>
+                <!-- TODO: Add free response question here -->
+            </div>
+        </div>
+    </body>
+</html>
